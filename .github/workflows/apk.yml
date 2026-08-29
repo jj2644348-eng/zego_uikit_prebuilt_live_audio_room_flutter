@@ -20,28 +20,28 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.22.x'
           channel: 'stable'
 
       - name: Fix Permissions
         run: |
-          cd live_audio_room/android || cd android
-          chmod +x gradlew || true
-          cd ../..
+          if [ -d "example/android" ]; then
+            cd example/android && chmod +x gradlew && cd ../..
+          elif [ -d "android" ]; then
+            cd android && chmod +x gradlew && cd ..
+          fi
 
       - name: Install Dependencies
         run: |
-          cd live_audio_room
+          if [ -d "example" ]; then cd example; fi
           flutter pub get
 
       - name: Build APK
         run: |
-          cd live_audio_room
+          if [ -d "example" ]; then cd example; fi
           flutter build apk --release
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
           name: app-release
-          path: "live_audio_room/build/app/outputs/flutter-apk/app-release.apk"
-          
+          path: "**/build/app/outputs/flutter-apk/app-release.apk"
