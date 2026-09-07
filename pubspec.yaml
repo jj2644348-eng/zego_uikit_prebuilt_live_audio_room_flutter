@@ -1,4 +1,5 @@
-name: voice_chat_room
+name: zego_uikit_prebuilt_live_audio_room
+
 description: A voice chat room application.
 publish_to: 'none'
 version: 1.0.0+1
