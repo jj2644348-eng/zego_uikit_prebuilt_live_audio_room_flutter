@@ -1,3 +1,13 @@
+name: pb_live_frontend   # या आपके प्रोजेक्ट का नाम
+description: "A new Flutter project for voice chat room."
+publish_to: "none"
+
+version: 1.0.0+1
+
+# 🟢 इसे इस तरह से रखें (यह बहुत ज़रूरी है)
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
 dependencies:
   flutter:
     sdk: flutter
@@ -13,4 +23,12 @@ dependencies:
   permission_handler: ^12.0.1
   collection: ^1.18.0
   floating: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
   
