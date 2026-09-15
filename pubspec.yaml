@@ -1,10 +1,8 @@
-name: pb_live_frontend   # या आपके प्रोजेक्ट का नाम
+name: pb_live_frontend
 description: "A new Flutter project for voice chat room."
 publish_to: "none"
-
 version: 1.0.0+1
 
-# 🟢 इसे इस तरह से रखें (यह बहुत ज़रूरी है)
 environment:
   sdk: ">=3.0.0 <4.0.0"
 
